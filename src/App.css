@@ -1,17 +1,27 @@
 .App {
-  text-align: center;
-  background-color: #222;
+  background-color: #FFFFFF;
   height: 100vh;
   width: 100vw;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
+.panel-holder {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex; }
+  .panel-holder .left {
+    flex: 1;
+    transition: transform 1s ease; }
+    .panel-holder .left[data-status="open"] {
+      transform: translateX(-100%); }
+  .panel-holder .right {
+    flex: 1;
+    transition: transform 1s ease; }
+    .panel-holder .right[data-status="open"] {
+      transform: translateX(100%); }
